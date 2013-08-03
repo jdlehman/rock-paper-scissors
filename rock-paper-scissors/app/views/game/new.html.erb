@@ -1,1 +1,5 @@
-
+<%= form_tag "/throw", :method => "post" do %>
+	<%= label_tag :move, "Select a move:" %>
+	<%= select_tag :move, options_for_select([['Rock', 1], ['Paper', 2], ['Scissors', 3]], 1) %>
+  <%= submit_tag "Play" %>
+<% end %>

@@ -1,0 +1,16 @@
+<% case @winner %>
+	<% when 1 %>
+		<%= "#{@player_move.to_s.capitalize} beats 
+				#{@computer_move.to_s.capitalize}" %>
+		<br/>Player wins 
+	<% when -1 %>
+		<%= "#{@player_move.to_s.capitalize} loses to 
+				#{@computer_move.to_s.capitalize}" %>
+		<br/>Computer wins 
+	<% else %>
+		<%= "#{@player_move.to_s.capitalize} ties 
+				#{@computer_move.to_s.capitalize}" %>
+		<br/>Tie
+<% end %>
+<br/>
+<%= link_to 'New Game', root_path %>
