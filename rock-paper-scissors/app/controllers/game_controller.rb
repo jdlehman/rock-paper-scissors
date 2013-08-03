@@ -1,5 +1,5 @@
 class GameController < ApplicationController
-	
+
 	def new
 	end
 
@@ -15,10 +15,9 @@ class GameController < ApplicationController
 		# convert to symbol
 		srand Time.new.sec
 		@computer_move = to_symbol(rand(2) + 1)
-		
+
 		# convert player move to symbole
 		@player_move = to_symbol(params[:move].to_i)
-		p @computer_move
 	end
 
 	def to_symbol(num)
@@ -42,7 +41,7 @@ class GameController < ApplicationController
 				1
 			else
 				-1
-			end	
+			end
 		else
 			0
 		end

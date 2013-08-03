@@ -1,5 +1,32 @@
-<%= form_tag "/throw", :method => "post" do %>
-	<%= label_tag :move, "Select a move:" %>
-	<%= select_tag :move, options_for_select([['Rock', 1], ['Paper', 2], ['Scissors', 3]], 1) %>
-  <%= submit_tag "Play" %>
+<div class="container">
+  <h1> Play Rock Paper Scissors </h1>
+  <div id="gameform">
+    <%= form_tag "/throw", :method => "post" do %>
+      <%= label_tag :move, "Select a move:", :class => 'label' %>
+      <%= select_tag :move, options_for_select([['Rock', 1], ['Paper', 2], ['Scissors', 3]], 1), :id => 'selector' %>
+      <%= submit_tag "Play", :class => "btn btn-default" %>
+    <% end %>
+    <%= image_tag 'rock.jpg', :id => 'img', :class => 'img-rounded', :width => '200px' %>
+  </div>
+</div>
+
+<% content_for :javascript do %>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      //change image on select change
+      $('#selector').change(function() {
+        var value = $(this).val();
+        var img = $('#img');
+        if(value == 1) {
+          img.attr('src', '/assets/rock.jpg');
+        }
+        else if(value == 2) {
+          img.attr('src', '/assets/paper.jpg');
+        }
+        else {
+          img.attr('src', '/assets/scissors.jpg');
+        }
+      });
+    });
+  </script>
 <% end %>

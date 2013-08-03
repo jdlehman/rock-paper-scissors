@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>RockPaperScissors</title>
+  <title>Rock Paper Scissors</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <%= yield :javascript %>
   <%= csrf_meta_tags %>
 </head>
 <body>
