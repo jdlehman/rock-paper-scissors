@@ -1,16 +1,27 @@
-<% case @winner %>
-	<% when 1 %>
-		<%= "#{@player_move.to_s.capitalize} beats 
-				#{@computer_move.to_s.capitalize}" %>
-		<br/>Player wins 
-	<% when -1 %>
-		<%= "#{@player_move.to_s.capitalize} loses to 
-				#{@computer_move.to_s.capitalize}" %>
-		<br/>Computer wins 
-	<% else %>
-		<%= "#{@player_move.to_s.capitalize} ties 
-				#{@computer_move.to_s.capitalize}" %>
-		<br/>Tie
-<% end %>
-<br/>
-<%= link_to 'New Game', root_path %>
+<div class="container">
+  <h1 class="text-center">Game Outcome</h1>
+  <br><br>
+  <% case @winner %>
+    <% when 1 %>
+      <%= render :partial => 'game/outcome', :locals => { :center_text => 'beats' } %>
+      <div class="row-fluid">
+        <h2 class="offset5 span2"><em>You Win!</em></h2>
+      </div>
+    <% when -1 %>
+      <%= render :partial => 'game/outcome', :locals => { :center_text => 'loses to' } %>
+      <div class="row-fluid">
+        <h2 class="offset5 span2"><em>You Lose</em></h2>
+      </div>
+    <% else %>
+      <%= render :partial => 'game/outcome', :locals => { :center_text => 'ties' } %>
+      <div class="row-fluid">
+        <h2 class="offset5 span2"><em>Tie</em></h2>
+      </div>
+  <% end %>
+  <hr>
+  <div class="row-fluid">
+    <div class="offset5 span2">
+      <h3><%= link_to 'New Game', root_path %></h3>
+    </div>
+  </div>
+</div>

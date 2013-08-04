@@ -1,0 +1,19 @@
+ <div class="row-fluid">
+  <div class="offset2 span3">
+    <%= image_tag "#{@player_move.to_s}.jpg", :id => 'img', :class => 'img-rounded' %>
+  </div>
+  <div class="span2">
+    <h2 class="lead between-img "><%= center_text %></h2>
+  </div>
+  <div class="span3">
+    <%= image_tag "#{@computer_move.to_s}.jpg", :id => 'img', :class => 'img-rounded' %>
+  </div>
+</div>
+<div class="row-fluid">
+  <div class="offset2 span3">
+    <h3 class="offset4"><%= "#{@player_move.to_s.capitalize}" %></h3>
+  </div>
+  <div class="offset2 span3">
+    <h3 class="offset4"><%= "#{@computer_move.to_s.capitalize}" %></h3>
+  </div>
+</div>

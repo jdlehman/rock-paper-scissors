@@ -14,7 +14,7 @@ class GameController < ApplicationController
 		# generate random computer move
 		# convert to symbol
 		srand Time.new.sec
-		@computer_move = to_symbol(rand(2) + 1)
+		@computer_move = to_symbol(rand(3) + 1)
 
 		# convert player move to symbole
 		@player_move = to_symbol(params[:move].to_i)
