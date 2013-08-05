@@ -1,10 +1,10 @@
 class GameController < ApplicationController
+  before_filter :setup, :only => [:play]
 
 	def new
 	end
 
 	def play
-		setup
 		@winner = outcome
 	end
 
